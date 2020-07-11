@@ -1,0 +1,26 @@
+﻿@model List<GitHubRepositoriesSearchPage.Models.Repository>
+
+@{
+    ViewBag.Title = "Bookmarks";
+}
+<h2>Choosen Repositories</h2>
+
+@if (Model.Count == 0)
+{
+    <text>No Repository has been selected</text>
+}
+else
+{
+    foreach (var repository in Model)
+    {
+        <div class="card" style="width:17rem;display:inline-block;margin:50px;">
+            <img src=@repository.owner.avatar_url class="card-img-top" style="width:200px;">
+            <div class="card-body">
+                <h5 class="card-title" style="font-weight:bold">@repository.name</h5>
+                <p class="card-text">Owner: @repository.owner.login</p>
+            </div>
+        </div>
+    }
+}
+
+

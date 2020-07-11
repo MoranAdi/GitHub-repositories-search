@@ -1,0 +1,18 @@
+﻿
+@model string
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Repositories</h2>
+
+@using (Html.BeginForm("Search", "Home"))
+{
+    <div class="form-group">
+        <label for="search">Find a repository...</label>
+        <input type="text" class="form-control" placeholder="" name="search" id="search" value=""/>
+    </div>
+    <button type="submit" class="btn btn-primary" value="Search">Search</button>
+}
+
